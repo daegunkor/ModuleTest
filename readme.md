@@ -1,28 +1,31 @@
+# プロジェクト名｜ 作家の部屋モジュールテスト
 
+* 開発期間 / 開発人員｜ 2017. 3. 13 ~ 2017. 3. 29(２週間)
 
-<p align="center"><img src="./readmeImg/dungeonsurvivalHeader.jpg"></p>
+* 概要｜ 作家の部屋プロジェクトを開発する前の技術的テスト
 
-<span class='subject'>プロジェクト名｜</span>
-<span class='content'>Dungeon Survival</span>
+## 1. Tag Editor
+* 紹介｜エディター機能に人物のタグを適用するためのテスト
+* 開発環境｜ Php, JavaScript, jQuery, MySql
+<img src='./_ReadmeImg/1TagEditor.jpg'>
 
-<span class='subject'>開発期間 / 開発人員｜</span>
-<span class='content'>2016. 5. 14 ~ 2016. 6. 19( 1ヶ月 )
- 　/　 1人</span>
+## 2. Map Maker
+* 紹介｜地図を描くためのテスト
+* 開発環境｜ Php, JavaScript, jQuery
+<img src='./_ReadmeImg/2MapMaker_1.jpg'>
+<img src='./_ReadmeImg/2MapMaker_2.jpg'>
 
-<span class='subject'>開発環境｜</span>
-<span class='content'>Java( IOStream, Socket, Swing ) * IOStream : Input / Output Stream
-</span>
+## 3. Auto Complete
+* 紹介｜小説を書きながら人物のタグを自動検査し、適用するためのテスト
+* 開発環境｜ Php, JavaScript, jQuery, MySql
+<img src='./_ReadmeImg/3AutoComplete.jpg'>
 
-<span class='subject'>概要｜</span>
-<span class='content'>
-- 多数のプレーヤーとの戦闘、生き残りをかけたオンライン激闘
-　サバイバルゲーム
-- ３つのキャラクターのクラス（ファイター、戦略家、アサシン）を
-選択し、それなりの特性を活用して最後まで生存することが目標
-</span>
+## 4. Chapter
+* 紹介｜小説を書きながら小説の単位をドラックで簡単に位置を変えるためのテスト
+* 開発環境｜ Php, JavaScript, jQuery
+<img src='./_ReadmeImg/4Chapter.jpg'>
 
-
-
-<span class='subject'>機能説明</span>
-<p align="center"><img src="./readmeImg/func1.jpg"></p>
-<p align="center"><img src="./readmeImg/func2.jpg"></p>
+## 5. Mind Map
+* 紹介｜マインドマップの形の人物相関図を実装するためのテスト
+* 開発環境｜ Php, JavaScript, jQuery, D3.js
+<img src='./_ReadmeImg/5MindMap.jpg'>
