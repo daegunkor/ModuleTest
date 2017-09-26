@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./style.css?ver=3">
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous">
+    </script>
+    <script src="./app.js"></script>
+  </head>
+  <body>
+    <div class="writeDiv">
+      <h2>글 내용</h2>
+      <div contenteditable="true" class="contentBox" onselect="setLastSelection()">
+        그의 말이 옳았다.
+        <br> 그 누구도 왕의 말을 들을리 없었고,
+        <br> 설령 믿는다 한 들 무슨 의미가 있겠는가.
+      </div>
+      <br>
+      <input type="button" onclick="surroundSelection('simson','green')" value="감싸기">
+      <input type="button" class="getSampleBtn" value="샘플 불러오기">
+
+    </div>
+
+    <div class="showInfoDiv">
+      <div class="chaInfoDiv">
+        <table class="chaInfoTable">
+          <tr class="chaInfoTr">
+            <td class="chaImgTd"><img src="" class="chaImg"></td>
+            <td class="chaNameTd">호머 심슨</td>
+          </tr>
+          <tr>
+            <td class="chaTagColorTd">태그 색깔</td>
+            <td class="chaTagTd">a</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="chaIntroTd">a</td>
+          </tr>
+        </table>
+      </div>
+      <div class="chaListDiv">
+      </div>
+    </div>
+  </body>
+</html>

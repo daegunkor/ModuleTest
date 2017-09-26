@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- 스타일 적용 -->
+        <style>
+                    #display {
+                        width:100%;
+                        display:none;
+                        position:absolute;
+                        z-index:9999;
+                        float:right;
+                        border-left:solid 1px #dedede;
+                        border-right:solid 1px #dedede;
+                        border-bottom:solid 1px #dedede;
+                        overflow:hidden;
+                    }
+
+                    .display_box {
+                        padding:4px;
+                        font-size:12px;
+                        height:80px;
+                        background:#FFFFFF;
+                        color: #333333;
+                    }
+
+                    .display_box:hover {
+                        background:#fcffaa;
+                        color: black;
+                        cursor: pointer;
+                    }
+
+                    .boximage {
+                        float:left;
+                        margin-right:10px;
+                    }
+                </style>
+
+
+        <!-- jquery적용 -->
+        <script>
+            $(document).ready(function () { //여기가 자동완성 기능 소스코드이다.
+                $("#keyword").keyup(function()   {
+                    var keyword = $(this).val();
+
+                    var dataString = 'searchword='+ keyword;
+
+
+                    if(keyword=='' || keyword.length == 1) { //검색창이 비워져 있거나 글자수가 1자리면 자동완성기능이 실행되지 않는다.
+                        $("#display").hide();
+                    } else { //비워져 있지 않느면 post방식으로 suggestions.php파일을 호출해 dataString값을 보내고 불러온다.
+                        $.ajax({
+                        type: "POST",
+                        url: "./suggestions.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#display").html(html).show();
+                          },
+                          error: function(xhr, status, error){
+                            alert(error);
+                          }
+                        });
+                    } return false;
+                });
+            });
+
+
+
+            function checkSearch() {
+                var searchKeyword=document.getElementById("keyword").value; //이벤트로 받은 값을 searchKeyword에 담는다
+
+                if(!searchKeyword.trim()) //값이 없다면 팝업창이 뜨고
+                    alert('검색어를 입력해주세요');
+                else { //값이 있다면 해당 링크로 검색을 한다.
+                    location.href='https://www.google.co.kr/search?q='+searchKeyword;
+                }
+            }
+
+        </script>
+    </head><!--/head-->
+
+    <body>
+        <form action="javascript:checkSearch();">
+            <div class="input-group">
+                <input name="keyword" id="keyword" type="text" class="form-control">
+                <!-- 검색창에 키워드를 입력하면 ajax로 실시간 동기화가 이루어진다. 47로 이동-->
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" onclick="javascript:checkSearch('keyword');"><i class="icon-search">버튼</i></button>
+                    <!-- 클릭버튼을 눌렀다면 onclick으로 인해 이벤트가 발생한다. 74로 이동 -->
+                </span>
+            </div>
+            <div id="display">
+            </div>
+        </form>
+
+    </body>
+</html>
